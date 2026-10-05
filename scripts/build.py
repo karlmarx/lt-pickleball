@@ -5,7 +5,7 @@
 #     "playwright>=1.48",
 # ]
 # ///
-"""Build the static site for lt.93.fyi.
+"""Build the static site for balls.93.fyi.
 
 Generates the inline SVG ball diagrams (Fibonacci sphere hole layouts), the
 print-only QR code, the favicon, and optionally the 1200x630 Open Graph image.
@@ -30,7 +30,7 @@ import segno
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "src"
 PUBLIC = ROOT / "public"
-SITE_URL = "https://lt.93.fyi"
+SITE_URL = "https://balls.93.fyi"
 
 GOLDEN_ANGLE = math.pi * (3.0 - math.sqrt(5.0))
 
@@ -212,7 +212,7 @@ def qr_svg(url: str) -> str:
         svgclass="qr",
         lineclass=None,
         omitsize=False,
-        title="QR code for lt.93.fyi",
+        title="QR code for balls.93.fyi",
     )
     return buf.getvalue().decode()
 
