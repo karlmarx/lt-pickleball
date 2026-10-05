@@ -14,6 +14,7 @@ The page template lives in ``src/index.html``; output goes to ``public/``.
 Usage:
     uv run scripts/build.py          # HTML + favicon
     uv run scripts/build.py --og     # also render public/og.png
+    uv run scripts/build.py --pdf    # also render the printable handout PDF
 """
 
 from __future__ import annotations
@@ -31,6 +32,7 @@ ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "src"
 PUBLIC = ROOT / "public"
 SITE_URL = "https://balls.93.fyi"
+PDF_NAME = "LT-Pro-48-handout.pdf"
 
 GOLDEN_ANGLE = math.pi * (3.0 - math.sqrt(5.0))
 
@@ -261,6 +263,30 @@ def build_html() -> dict[str, int]:
     return {"lt": lt_count, "fr": fr_count}
 
 
+def chromium_path() -> str:
+    """Return the Chromium executable, honoring ``CHROMIUM_PATH``."""
+    exe = os.environ.get("CHROMIUM_PATH", "/opt/pw-browsers/chromium")
+    if Path(exe).is_dir():
+        exe = str(next(Path(exe).glob("chrome-linux/chrome")))
+    return exe
+
+
+def build_pdf() -> None:
+    """Print ``public/index.html`` with its print stylesheet to a letter PDF."""
+    from playwright.sync_api import sync_playwright
+
+    with sync_playwright() as pw:
+        browser = pw.chromium.launch(executable_path=chromium_path())
+        page = browser.new_page()
+        page.goto((PUBLIC / "index.html").as_uri())
+        page.pdf(
+            path=str(PUBLIC / PDF_NAME),
+            prefer_css_page_size=True,
+            print_background=True,
+        )
+        browser.close()
+
+
 def build_og() -> None:
     """Render the 1200x630 share image from ``src/og.html`` with Chromium."""
     from playwright.sync_api import sync_playwright
@@ -275,11 +301,8 @@ def build_og() -> None:
         .replace("{{BALL_FR}}", fr)
         .replace("{{BALL_STYLE}}", styles)
     )
-    exe = os.environ.get("CHROMIUM_PATH", "/opt/pw-browsers/chromium")
-    if Path(exe).is_dir():
-        exe = str(next(Path(exe).glob("chrome-linux/chrome")))
     with sync_playwright() as pw:
-        browser = pw.chromium.launch(executable_path=exe)
+        browser = pw.chromium.launch(executable_path=chromium_path())
         page = browser.new_page(viewport={"width": 1200, "height": 630})
         page.set_content(html)
         page.screenshot(path=str(PUBLIC / "og.png"))
@@ -296,12 +319,16 @@ def main() -> None:
     """Parse arguments and run the build."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--og", action="store_true", help="render og.png too")
+    parser.add_argument("--pdf", action="store_true", help="render the handout PDF")
     args = parser.parse_args()
     counts = build_html()
     print(f"visible holes: LT {counts['lt']}, Franklin {counts['fr']}")
     if args.og:
         build_og()
         print("wrote public/og.png")
+    if args.pdf:
+        build_pdf()
+        print(f"wrote public/{PDF_NAME}")
 
 
 if __name__ == "__main__":

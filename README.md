@@ -17,6 +17,7 @@ It replaces the laminated two-page handout in `source/`. The site is the source 
 ```sh
 uv run scripts/build.py        # public/index.html + favicon
 uv run scripts/build.py --og   # also og.png and apple-touch-icon.png (needs Chromium)
+uv run scripts/build.py --pdf  # also public/LT-Pro-48-handout.pdf, the print layout as a PDF (needs Chromium)
 ruff format scripts && ruff check scripts
 ```
 
