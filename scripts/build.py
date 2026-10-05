@@ -208,12 +208,12 @@ def qr_svg(url: str) -> str:
         xmldecl=False,
         svgns=True,
         scale=4,
-        border=2,
+        border=4,
         dark="#000",
         light="#fff",
         svgclass="qr",
         lineclass=None,
-        omitsize=False,
+        omitsize=True,
         title="QR code for balls.93.fyi",
     )
     return buf.getvalue().decode()
