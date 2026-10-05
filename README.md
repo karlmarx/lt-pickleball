@@ -29,6 +29,8 @@ Set `CHROMIUM_PATH` if Chromium is not at `/opt/pw-browsers/chromium`.
 npx wrangler deploy   # needs CLOUDFLARE_API_TOKEN + CLOUDFLARE_ACCOUNT_ID
 ```
 
+Pushes to `main` deploy automatically via `.github/workflows/deploy.yml` (repo secrets `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID`). The workflow does not build: run the build above and commit `public/` before merging.
+
 balls.93.fyi has its own Cloudflare Access app with a public bypass policy, so the `*.93.fyi` login wall does not apply.
 
 ## Rules for copy
