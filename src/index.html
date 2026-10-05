@@ -98,6 +98,14 @@ a { color: var(--lt-ink); text-underline-offset: 3px; text-decoration-thickness:
 .btn.ghost { background: transparent; color: var(--text); border-color: var(--text); }
 
 /* Reasons */
+.tldr { background: var(--lt-tint); border: 2px solid var(--lt); border-radius: var(--radius); padding: 18px 20px; margin: 0 0 36px; }
+.tldr .kicker { margin-bottom: .4em; }
+.tldr ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.tldr li { padding-left: 1.6em; position: relative; line-height: 1.4; }
+.tldr li::before { content: "\2713"; position: absolute; left: 0; font-weight: 800; color: var(--lt-ink); }
+.tldr strong { color: var(--lt-ink); }
+.tldr .cta-row { margin-top: 16px; }
+.tldr .pdf-note { font-size: .95rem; color: var(--muted); margin: 10px 0 0; }
 .reasons { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; counter-reset: r; }
 .reasons li { background: var(--surface); border-radius: var(--radius); padding: 20px 20px 4px; border-left: 6px solid var(--lt); counter-increment: r; }
 .reasons h3::before { content: counter(r) ". "; color: var(--lt-ink); }
@@ -244,7 +252,7 @@ footer { padding-top: 24px; padding-bottom: 40px; border-top: 2px solid var(--li
   .test h2 { display: none; }
   .test .lead { font-size: 11.5pt; margin: 0; }
   .test .print-qr { display: flex; align-items: center; gap: 8pt; font-weight: 700; font-size: 9pt; grid-row: span 2; }
-  .print-qr svg { width: 0.9in; height: 0.9in; }
+  .print-qr svg { width: 1.1in; height: 1.1in; flex: none; }
   .fine-1 { order: 6; }
   #side { order: 7; break-before: page; border-top: 0; padding-top: 0; }
   #zoom { order: 8; }
@@ -283,6 +291,23 @@ footer { padding-top: 24px; padding-bottom: 40px; border-top: 2px solid var(--li
     <a class="btn ghost" href="#side">See the holes</a>
   </div>
 </header>
+
+<section class="tldr noprint" aria-labelledby="tldr-h">
+  <h2 id="tldr-h" class="kicker">The short version</h2>
+  <ul>
+    <li><strong>Cracks less.</strong> Beveled hole edges, fewer dead balls.</li>
+    <li><strong>Truer bounce.</strong> 48 evenly spaced holes, no dead spots.</li>
+    <li><strong>Handles our heat.</strong> Stays fast on hot afternoons.</li>
+    <li><strong>What the pros play.</strong> Official ball of the PPA Tour and MLP.</li>
+    <li><strong>Easy to try.</strong> One game with each ball, then vote.</li>
+  </ul>
+  <div class="cta-row">
+    <a class="btn" href="#test">I'll try it</a>
+    <a class="btn ghost" href="/LT-Pro-48-handout.pdf" download>Printable handout (PDF)</a>
+  </div>
+  <p class="pdf-note">Two pages, letter size. Print it and pass it around.</p>
+  <p class="pdf-note"><a href="#watch">Watch reviews</a> &middot; <a href="#buy">Where to buy</a></p>
+</section>
 
 <section id="reasons" class="sec" aria-labelledby="reasons-h">
   <span class="kicker">Four reasons</span>
@@ -451,6 +476,15 @@ footer { padding-top: 24px; padding-bottom: 40px; border-top: 2px solid var(--li
 
 <p class="print-only fine fine-1">Specs and durability claims per Life Time and Pickleball Central product information; PPA Tour and MLP ball announcements, 2025 and 2026. Franklin X-40 specs per Pickleball Central product information. Ball feel is subjective, so run the test above.</p>
 <p class="print-only fine fine-2">Ball illustrations are schematic, drawn to show hole count and edge geometry, not exact factory hole placement. About twenty holes of each ball are visible from any one side. Construction and patent details per Life Time and Pickleball Central product information; Franklin X-40 specs per Pickleball Central.</p>
+
+<section id="watch" class="sec noprint" aria-labelledby="watch-h">
+  <span class="kicker">Watch before you play</span>
+  <h2 id="watch-h">See the balls in action.</h2>
+  <ul class="links">
+    <li><a href="https://www.youtube.com/watch?v=IDTvFvIeWAY" rel="noopener">Life Time Pickleball Ball Review <small>Zane Navratil, pro player, on YouTube</small></a></li>
+    <li><a href="https://www.youtube.com/watch?v=vAT3NywfwTU" rel="noopener">Most Popular Pickleball Balls Ranked: Data-Driven Test <small>Pickleball Effect on YouTube. Tests the LT Pro 48 and the Franklin X-40 side by side.</small></a></li>
+  </ul>
+</section>
 
 <section id="buy" class="sec noprint" aria-labelledby="buy-h">
   <span class="kicker">Where to get them</span>
