@@ -9,7 +9,8 @@ It replaces the laminated two-page handout in `source/`. The site is the source 
 - `src/index.html` page template (all CSS and JS inline, no framework, no external fonts)
 - `src/og.html` template for the 1200x630 share image
 - `scripts/build.py` fills the template: Fibonacci-sphere ball SVGs, print QR code, favicon, og image
-- `public/` built output, served as-is by Vercel (no build step on Vercel)
+- `public/` built output, served as-is by a Cloudflare Worker with static assets (no build step)
+- `public/_headers` security + cache headers; `wrangler.jsonc` Worker config (custom domain balls.93.fyi)
 
 ## Build
 
@@ -20,6 +21,14 @@ ruff format scripts && ruff check scripts
 ```
 
 Set `CHROMIUM_PATH` if Chromium is not at `/opt/pw-browsers/chromium`.
+
+## Deploy
+
+```sh
+npx wrangler deploy   # needs CLOUDFLARE_API_TOKEN + CLOUDFLARE_ACCOUNT_ID
+```
+
+balls.93.fyi has its own Cloudflare Access app with a public bypass policy, so the `*.93.fyi` login wall does not apply.
 
 ## Rules for copy
 
