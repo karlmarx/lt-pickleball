@@ -1,0 +1,9 @@
+node_modules/
+.vercel/
+dist/
+.venv/
+__pycache__/
+.DS_Store
+.lighthouse/
+*.pyc
+.wrangler/
