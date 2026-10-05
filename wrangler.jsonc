@@ -1,6 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "balls-93fyi",
+  "account_id": "f1ccbe18fa0f60f84f0ab66ac4f6855a",
   "compatibility_date": "2026-10-01",
   // Static-only Worker: serves public/ as-is, no script.
   "assets": {
