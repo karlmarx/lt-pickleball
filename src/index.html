@@ -98,6 +98,13 @@ a { color: var(--lt-ink); text-underline-offset: 3px; text-decoration-thickness:
 .btn.ghost { background: transparent; color: var(--text); border-color: var(--text); }
 
 /* Reasons */
+.tldr { background: var(--lt-tint); border: 2px solid var(--lt); border-radius: var(--radius); padding: 18px 20px; margin: 0 0 36px; }
+.tldr .kicker { margin-bottom: .4em; }
+.tldr ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.tldr li { padding-left: 1.6em; position: relative; line-height: 1.4; }
+.tldr li::before { content: "\2713"; position: absolute; left: 0; font-weight: 800; color: var(--lt-ink); }
+.tldr strong { color: var(--lt-ink); }
+.tldr .btn { margin-top: 16px; }
 .reasons { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; counter-reset: r; }
 .reasons li { background: var(--surface); border-radius: var(--radius); padding: 20px 20px 4px; border-left: 6px solid var(--lt); counter-increment: r; }
 .reasons h3::before { content: counter(r) ". "; color: var(--lt-ink); }
@@ -283,6 +290,18 @@ footer { padding-top: 24px; padding-bottom: 40px; border-top: 2px solid var(--li
     <a class="btn ghost" href="#side">See the holes</a>
   </div>
 </header>
+
+<section class="tldr noprint" aria-labelledby="tldr-h">
+  <h2 id="tldr-h" class="kicker">The short version</h2>
+  <ul>
+    <li><strong>Cracks less.</strong> Beveled hole edges, fewer dead balls.</li>
+    <li><strong>Truer bounce.</strong> 48 evenly spaced holes, no dead spots.</li>
+    <li><strong>Handles our heat.</strong> Stays fast on hot afternoons.</li>
+    <li><strong>What the pros play.</strong> Official ball of the PPA Tour and MLP.</li>
+    <li><strong>Easy to try.</strong> One game with each ball, then vote.</li>
+  </ul>
+  <a class="btn" href="#test">I'll try it</a>
+</section>
 
 <section id="reasons" class="sec" aria-labelledby="reasons-h">
   <span class="kicker">Four reasons</span>
