@@ -1,6 +1,6 @@
 # lt-pickleball
 
-Source for **https://balls.93.fyi**: the case for switching our open-play courts from the Franklin X-40 to the Life Time LT Pro 48.
+Source for **https://balls.93.fyi**: an evidence review of switching our open-play courts from the Franklin X-40 to the Life Time LT Pro 48. Every claim on the page is graded (measured, reported, maker's claim, not tested) and cited in the Sources section.
 
 It replaces the laminated two-page handout in `source/`. The site is the source of truth now: print the page (letter paper) to get the handout back.
 
