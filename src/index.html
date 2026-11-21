@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Let's play the LT Pro 48 | Court ball proposal</title>
-<meta name="description" content="Why our open-play courts should switch from the Franklin X-40 to the Life Time LT Pro 48, the official ball of the PPA Tour and Major League Pickleball. Run the two-game test.">
+<title>LT Pro 48 vs Franklin X-40: the evidence | Court ball proposal</title>
+<meta name="description" content="A proposal to trial the Life Time LT Pro 48 in place of the Franklin X-40 in open play: what has been measured, what is only claimed, the case against, and a court test.">
 <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#101410" media="(prefers-color-scheme: dark)">
 <meta name="color-scheme" content="light dark">
@@ -13,12 +13,12 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://balls.93.fyi/">
-<meta property="og:title" content="Let's play the LT Pro 48">
-<meta property="og:description" content="The official ball of the PPA Tour and MLP. Here's why it beats the Franklin X-40 on our courts. Play one game with each and decide.">
+<meta property="og:title" content="LT Pro 48 vs Franklin X-40: the evidence">
+<meta property="og:description" content="Faster and higher bouncing in one independent test. Durability claims are unproven. Sources, the case against, and a court test.">
 <meta property="og:image" content="https://balls.93.fyi/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="A bright green LT Pro 48 ball with 48 beveled holes next to a yellow Franklin X-40 with 40 drilled holes, under the headline Let's play the LT Pro 48.">
+<meta property="og:image:alt" content="A bright green LT Pro 48 ball with 48 beveled holes next to a yellow Franklin X-40 with 40 drilled holes, under the headline LT Pro 48 vs X-40.">
 <meta name="twitter:card" content="summary_large_image">
 <style>
 :root {
@@ -109,6 +109,15 @@ a { color: var(--lt-ink); text-underline-offset: 3px; text-decoration-thickness:
 .reasons { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; counter-reset: r; }
 .reasons li { background: var(--surface); border-radius: var(--radius); padding: 20px 20px 4px; border-left: 6px solid var(--lt); counter-increment: r; }
 .reasons h3::before { content: counter(r) ". "; color: var(--lt-ink); }
+.grade { display: inline-block; font-size: .72rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; padding: 1px 7px; border-radius: 6px; border: 2px solid currentColor; margin-right: 4px; vertical-align: 1px; white-space: nowrap; }
+.g-meas { color: var(--lt-ink); }
+.g-rep { color: var(--fr-ink); }
+.g-claim, .g-none { color: var(--bad); }
+.g-none { border-style: dashed; }
+.legend { font-size: .95rem; color: var(--muted); line-height: 2; }
+.cite { font-size: .75em; font-weight: 700; text-decoration: none; vertical-align: super; line-height: 0; padding: 0 1px; }
+:target { scroll-margin-top: 16px; }
+.src li:target { background: var(--lt-tint); outline: 2px solid var(--lt); outline-offset: 4px; border-radius: 4px; }
 @media (min-width: 700px) { .reasons { grid-template-columns: 1fr 1fr; } }
 
 /* Ball diagram */
@@ -224,48 +233,60 @@ a { color: var(--lt-ink); text-underline-offset: 3px; text-decoration-thickness:
 .links a small { font-weight: 500; color: var(--muted); font-size: .9rem; }
 details { border: 2px solid var(--line); border-radius: var(--radius); }
 summary { cursor: pointer; font-weight: 800; padding: 14px 16px; min-height: 52px; list-style-position: inside; }
-.src { padding: 0 16px 8px 36px; margin: 0; }
+.src { padding: 0 0 8px 24px; margin: 0; }
 .src li { margin-bottom: .9em; }
-.src-note { padding: 0 16px 8px; }
+.src-note { padding: 0 0 8px; color: var(--muted); }
 footer { padding-top: 24px; padding-bottom: 40px; border-top: 2px solid var(--line); font-size: .95rem; color: var(--muted); }
 
 /* Print: rebuild the two-page letter handout. Page 1 is the pitch, page 2 the ball diagrams. */
 @media print {
-  @page { size: letter; margin: .45in; }
+  @page { size: letter; margin: .35in .4in; }
   :root { --bg: #fff; --surface: #f2f4f1; --text: #000; --muted: #222; --line: #bbb; --lt-ink: #17501b; --lt-tint: #eef7ec; --fr-ink: #5c4d00; --bad: #9b1c14; }
   * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   body { font-size: 10pt; line-height: 1.3; padding: 0; }
   main { display: flex; flex-direction: column; max-width: none; padding: 0; }
-  footer, .noprint, .skip, .cta-row, .tap, .vote-q, .vote, .tally, .zoom, .steps { display: none !important; }
+  footer, .noprint, .skip, .cta-row, .tap, .vote-q, .vote, .tally, .zoom { display: none !important; }
+  .steps { grid-column: 1; margin: 2pt 0 0; font-size: 8.8pt; }
+  .steps li { margin-bottom: 0; }
+  #h2h .kicker, #fair .kicker { margin-bottom: 1pt; }
   .print-only { display: block; }
-  .sec { padding: 6pt 0; border-top: 1.5pt solid #ccc; break-inside: avoid; }
+  .sec { padding: 3pt 0; border-top: 1.5pt solid #ccc; break-inside: avoid; }
   #zoom { break-inside: auto; }
-  h1 { font-size: 28pt; margin-bottom: 4pt; } h2 { font-size: 17pt; margin-bottom: 5pt; } h3 { font-size: 11.5pt; }
+  h1 { font-size: 24pt; margin-bottom: 4pt; } h2 { font-size: 17pt; margin-bottom: 5pt; } h3 { font-size: 11.5pt; }
   .kicker { font-size: 8.5pt; margin-bottom: 3pt; }
   .hero { order: 1; padding: 0 0 6pt; }
   .hero .kicker { margin-top: 0; }
-  .sub { font-size: 12pt; margin: 0; }
+  .sub { font-size: 10.5pt; margin: 0; max-width: none; }
   #reasons { order: 2; }
   #h2h { order: 3; }
   #fair { order: 4; }
-  .test { order: 5; margin: 6pt 0; padding: 9pt 12pt; border-radius: 10pt; display: grid; grid-template-columns: 1fr auto; gap: 0 14pt; align-items: center; break-inside: avoid; }
+  .test { order: 5; margin: 3pt 0; padding: 5pt 10pt; border-radius: 10pt; display: grid; grid-template-columns: 1fr auto; gap: 0 14pt; align-items: center; break-inside: avoid; }
   .test h2 { display: none; }
-  .test .lead { font-size: 11.5pt; margin: 0; }
+  .test .lead { font-size: 10pt; margin: 0; }
   .test .print-qr { display: flex; align-items: center; gap: 8pt; font-weight: 700; font-size: 9pt; grid-row: span 2; }
-  .print-qr svg { width: 1.1in; height: 1.1in; flex: none; }
+  .print-qr svg { width: .85in; height: .85in; flex: none; }
   .fine-1 { order: 6; }
   #side { order: 7; break-before: page; border-top: 0; padding-top: 0; }
   #zoom { order: 8; }
   .tagline { order: 9; font-size: 15pt; padding: 8pt 0 2pt; }
   .fine-2 { order: 10; }
   .fine { font-size: 7.5pt; color: #333; margin: 4pt 0 0; }
-  .reasons { grid-template-columns: 1fr 1fr; gap: 8pt; }
-  .reasons li { padding: 7pt 10pt 1pt; }
+  .reasons { grid-template-columns: 1fr 1fr 1fr; gap: 5pt; font-size: 8.8pt; }
+  .reasons h3 { font-size: 10pt; margin-bottom: 2pt; }
+  .h2h { margin-top: 2pt; font-size: 9pt; }
+  .fair { font-size: 8.8pt; }
+  .fair h3 { font-size: 10pt; margin-bottom: 2pt; }
+  .legend { font-size: 8pt; line-height: 1.6; margin: 0 0 4pt; }
+  .grade { font-size: 6.5pt; border-width: 1pt; }
+  #reasons h2, .hero .sub, .h2h tr.web-only { display: none; }
+  #zoom > p { margin-bottom: 4pt; }
+  .h2h tbody th { width: 30%; }
+  .reasons li { padding: 5pt 7pt 0; border-left-width: 3pt; }
   .reasons p { margin-bottom: 5pt; }
-  .h2h th, .h2h td { padding: 3pt 6pt; }
+  .h2h th, .h2h td { padding: 1.5pt 6pt; }
   .fair { grid-template-columns: repeat(3, 1fr); gap: 8pt; }
-  .fair div { padding: 7pt 9pt 0; }
-  .fair p { margin-bottom: 6pt; }
+  .fair div { padding: 5pt 7pt 0; }
+  .fair p { margin-bottom: 4pt; }
   .balls { grid-template-columns: 1fr 1fr; gap: 18pt; margin-top: 6pt; }
   .ball-btn { max-width: 2in; padding: 0; border: 0; }
   .ball-fig h3, .ball-fig .spec { text-align: center; }
@@ -283,48 +304,50 @@ footer { padding-top: 24px; padding-bottom: 40px; border-top: 2px solid var(--li
 <main id="main">
 
 <header class="hero">
-  <span class="kicker">Court proposal. Ball upgrade.</span>
-  <h1>Let's play the <span>LT&nbsp;Pro&nbsp;48.</span></h1>
-  <p class="sub">The Life Time LT Pro 48 is the official ball of the PPA Tour and Major League Pickleball. Here's why it beats the Franklin X-40 on our courts.</p>
+  <span class="kicker">Court ball proposal. Evidence review.</span>
+  <h1>LT&nbsp;Pro&nbsp;48 vs <span>Franklin&nbsp;X-40.</span></h1>
+  <p class="sub">Proposal: trial the Life Time LT Pro 48 in open play in place of the Franklin X-40. This page separates what has been measured from what the manufacturer claims and what nobody has tested, then gives a court test to settle the rest.</p>
   <div class="cta-row">
-    <a class="btn" href="#test">Run the two-game test</a>
-    <a class="btn ghost" href="#side">See the holes</a>
+    <a class="btn" href="#reasons">See the evidence</a>
+    <a class="btn ghost" href="#test">Run the court test</a>
   </div>
 </header>
 
 <section class="tldr noprint" aria-labelledby="tldr-h">
-  <h2 id="tldr-h" class="kicker">The short version</h2>
+  <h2 id="tldr-h" class="kicker">Summary</h2>
   <ul>
-    <li><strong>Cracks less.</strong> Beveled hole edges, fewer dead balls.</li>
-    <li><strong>Truer bounce.</strong> 48 evenly spaced holes, no dead spots.</li>
-    <li><strong>Handles our heat.</strong> Stays fast on hot afternoons.</li>
-    <li><strong>What the pros play.</strong> Official ball of the PPA Tour and MLP.</li>
-    <li><strong>Easy to try.</strong> One game with each ball, then vote.</li>
+    <li><strong>Measured:</strong> in one independent test the LT was about 2 mph faster and bounced about 1.5 in higher than the X-40.<a class="cite" href="#s6">[6]</a></li>
+    <li><strong>Reported, not measured:</strong> reviewers say it holds its shape and copes with heat better. Their game counts for durability are about equal.<a class="cite" href="#s7">[7]</a><a class="cite" href="#s8">[8]</a></li>
+    <li><strong>Maker's claim:</strong> beveled hole edges reduce cracking. Life Time has published no test data for it.<a class="cite" href="#s3">[3]</a></li>
+    <li><strong>Against:</strong> the LT is not on the USA Pickleball approved list, it is harder to see, and some players find it too fast.<a class="cite" href="#s11">[11]</a><a class="cite" href="#s9">[9]</a></li>
+    <li><strong>Unknown:</strong> crack rate on our courts. The court test below is how we find out.</li>
   </ul>
   <div class="cta-row">
-    <a class="btn" href="#test">I'll try it</a>
-    <a class="btn" href="https://pickleballcentral.com/life-time-lt-pro-48-pickleball/" rel="noopener">Buy at Pickleball Central</a>
+    <a class="btn" href="#test">Court test</a>
+    <a class="btn ghost" href="#sources">Sources</a>
     <a class="btn ghost" href="/LT-Pro-48-handout.pdf" download>Printable handout (PDF)</a>
   </div>
-  <p class="pdf-note">Two pages, letter size. Print it and pass it around.</p>
-  <p class="pdf-note"><a href="#watch">Watch reviews</a></p>
+  <p class="pdf-note">Two pages, letter size.</p>
 </section>
 
 <section id="reasons" class="sec" aria-labelledby="reasons-h">
-  <span class="kicker">Four reasons</span>
-  <h2 id="reasons-h" class="sr-only">Four reasons</h2>
+  <span class="kicker">Claim by claim</span>
+  <h2 id="reasons-h">What the evidence supports.</h2>
+  <p class="legend"><span class="grade g-meas">Measured</span> independent numbers. <span class="grade g-rep">Reported</span> reviewer experience, no controlled test. <span class="grade g-claim">Maker's claim</span> no data published. <span class="grade g-none">Not tested</span></p>
   <ol class="reasons">
-    <li><h3>It doesn't crack as fast.</h3><p>Cracks on a pickleball almost always start at the edge of a hole. The LT Pro 48 chamfers every hole edge to spread that stress. Fewer dead balls mid-game, fewer balls in the trash.</p></li>
-    <li><h3>The bounce is true.</h3><p>48 symmetrically spaced holes and two-piece injection molding give a uniform bounce of about 85 cm. No skips, no dead spots, no "that one was the ball's fault."</p></li>
-    <li><h3>It survives our heat.</h3><p>Balls soften and slow down in South Florida sun. The LT plays faster with a higher bounce, so a hot afternoon ball still plays like a ball.</p></li>
-    <li><h3>It's what the pros play.</h3><p>PPA Tour and MLP both use it. If you enter a PPA event, this is the ball you'll be handed. Practice on what you'll compete on.</p></li>
+    <li><h3>Faster, higher bounce.</h3><p><span class="grade g-meas">Measured</span> Pickleball Effect measured used balls at 59.7 mph (LT) and 57.7 mph (X-40) on drives, with bounce of 22.4 in and 20.9 in.<a class="cite" href="#s6">[6]</a> One reviewer; sample size and temperature are not published.</p></li>
+    <li><h3>Stays round.</h3><p><span class="grade g-rep">Reported</span> In high-speed video of balls fired at a wall at 70 mph, the LT recovered its shape faster. The X-40 showed a flat spot, then recovered.<a class="cite" href="#s10">[10]</a> Two reviewers report no out-of-round LT balls.<a class="cite" href="#s7">[7]</a><a class="cite" href="#s9">[9]</a></p></li>
+    <li><h3>Cracks less.</h3><p><span class="grade g-claim">Maker's claim</span> Life Time says beveled hole edges reduce cracking, with no test data.<a class="cite" href="#s3">[3]</a> Reviewers disagree: one rates the LT more durable,<a class="cite" href="#s7">[7]</a> another gets 20 to 25 games from an LT and 20 to 30 from an X-40.<a class="cite" href="#s8">[8]</a> No controlled comparison exists.</p></li>
+    <li><h3>Better in heat.</h3><p><span class="grade g-rep">Reported</span> One reviewer finds the X-40 goes "mushy" above 90&deg;F and says the LT's extra speed offsets softening.<a class="cite" href="#s7">[7]</a> Nobody has published temperature measurements for either ball.</p></li>
+    <li><h3>Used by the pro tours.</h3><p><span class="grade g-meas">Verified</span> The PPA Tour (since August 2025) and MLP (2026) use it.<a class="cite" href="#s1">[1]</a><a class="cite" href="#s2">[2]</a> Weak evidence of quality: Life Time makes the ball, hosts tour events, and is a PPA Platinum Partner.</p></li>
+    <li><h3>Bounce stays the same as it wears.</h3><p><span class="grade g-none">Not supported</span> In the same test the LT lost 0.37 in of bounce with use and the X-40 lost 0.18 in.<a class="cite" href="#s6">[6]</a> Both changes are small.</p></li>
   </ol>
 </section>
 
 <section id="side" class="sec" aria-labelledby="side-h">
-  <span class="kicker">Side by side. Look at the holes.</span>
-  <h2 id="side-h">Same size ball. Very different build.</h2>
-  <p>Both are 2.9 inches and tournament legal. Everything that matters is in the hole count, the hole edges, and how the shell is made.</p>
+  <span class="kicker">Construction</span>
+  <h2 id="side-h">Same size and weight. Different build.</h2>
+  <p>Both balls are about 2.9 inches across and about 26 g. The differences are hole count, hole edges, and how the shell is molded. These specs come from the retailer's product pages.<a class="cite" href="#s4">[4]</a><a class="cite" href="#s5">[5]</a></p>
   <div class="balls">
     <figure class="ball-fig lt">
       <h3>Life Time LT Pro 48</h3>
@@ -344,38 +367,37 @@ footer { padding-top: 24px; padding-bottom: 40px; border-top: 2px solid var(--li
           <circle cx="120" cy="66" r="33" fill="#0e2a0a"/>
           <text x="120" y="140" text-anchor="middle" style="font:700 13px sans-serif;fill:#0d0d0d">bevel slopes into the hole</text>
         </svg>
-        <p><strong>Chamfered edge.</strong> The rim slopes gently into the hole, so there is no sharp lip for a crack to start from.</p>
+        <p><strong>Chamfered edge.</strong> The rim slopes into the hole instead of ending in a sharp lip.</p>
       </div>
       <ul>
-        <li>48 holes, evenly spaced all the way around, so flight stays stable from any contact point.</li>
-        <li>Chamfered hole edges. Each hole is beveled instead of sharp cut.</li>
-        <li>Two-piece injection molded for tighter wall thickness control.</li>
+        <li>48 holes of equal size and spacing.<a class="cite" href="#s3">[3]</a></li>
+        <li>Chamfered (beveled) hole edges.<a class="cite" href="#s1">[1]</a></li>
+        <li>Two-piece, injection molded.<a class="cite" href="#s4">[4]</a></li>
       </ul>
     </figure>
     <figure class="ball-fig fr">
       <h3>Franklin X-40</h3>
-      <p class="spec">40 HOLES</p>
+      <p class="spec">40 HOLES / ABOUT 26 G</p>
       <button class="ball-btn" type="button" aria-expanded="false" aria-controls="zoom-fr">
         {{BALL_FR}}
         <span class="tap noprint">Tap to zoom into a hole</span>
       </button>
       <div class="zoom" id="zoom-fr" hidden>
-        <svg viewBox="0 0 240 150" role="img" aria-label="Close-up of one Franklin X-40 hole with a sharp, square-cut rim">
+        <svg viewBox="0 0 240 150" role="img" aria-label="Close-up of one Franklin X-40 hole with a plain drilled rim">
           <defs>
             <radialGradient id="zf-shell" cx=".3" cy=".2" r="1"><stop offset="0" stop-color="#f6f48a"/><stop offset="1" stop-color="#c9c021"/></radialGradient>
           </defs>
           <rect width="240" height="150" rx="12" fill="url(#zf-shell)"/>
           <circle cx="120" cy="66" r="40" fill="#3a3505"/>
           <circle cx="120" cy="66" r="40" fill="none" stroke="#fffde0" stroke-width="2.5"/>
-          <circle cx="120" cy="66" r="47" fill="none" stroke="#9b1c14" stroke-width="3" stroke-dasharray="6 5"/>
-          <text x="120" y="140" text-anchor="middle" style="font:700 13px sans-serif;fill:#0d0d0d">sharp 90 degree lip</text>
+          <text x="120" y="140" text-anchor="middle" style="font:700 13px sans-serif;fill:#0d0d0d">plain drilled edge</text>
         </svg>
-        <p><strong>Square-cut edge.</strong> The drill leaves a hard 90 degree corner all the way around the hole. That corner is where cracks start.</p>
+        <p><strong>Drilled edge.</strong> The holes are drilled after molding. No bevel is listed, and the exact edge profile is not published.</p>
       </div>
       <ul>
-        <li>40 holes, drilled after molding, so a bit more air resistance and a slower ball.</li>
-        <li>Square-cut hole edges left by the drill bit.</li>
-        <li>One-piece rotationally molded, the older and cheaper process.</li>
+        <li>40 holes, drilled after molding.<a class="cite" href="#s5">[5]</a></li>
+        <li>No chamfer listed in the product specs.<a class="cite" href="#s5">[5]</a></li>
+        <li>One-piece, rotationally molded.<a class="cite" href="#s5">[5]</a></li>
       </ul>
     </figure>
   </div>
@@ -383,13 +405,14 @@ footer { padding-top: 24px; padding-bottom: 40px; border-top: 2px solid var(--li
 </section>
 
 <section id="zoom" class="sec" aria-labelledby="zoom-h">
-  <span class="kicker">Zoom in</span>
-  <h2 id="zoom-h">This is where a ball dies.</h2>
+  <span class="kicker">The cracking claim</span>
+  <h2 id="zoom-h">Life Time's explanation, untested.</h2>
+  <p>Life Time says cracks mostly start at hole edges and that a bevel reduces them.<a class="cite" href="#s3">[3]</a> Sharp corners concentrating stress is standard engineering, but no one has published crack counts for these two balls. The drawings show the claimed mechanism, not a test result.</p>
   <div class="xsec">
     <figure class="bad">
-      <h3>Square-cut hole: crack starts here</h3>
-      <p class="how">Impact load piles up on a 90 degree corner.</p>
-      <svg viewBox="0 0 320 150" role="img" aria-label="Cross-section of a ball wall with a square-cut hole. Its sharp corners are circled in red and cracks spread from them into the wall.">
+      <h3>Plain drilled hole</h3>
+      <p class="how">Claim: impact load concentrates at the corner.</p>
+      <svg viewBox="0 0 320 150" role="img" aria-label="Schematic cross-section of a ball wall with a square-cut hole. Its corners are circled in red and cracks are drawn spreading from them into the wall.">
         <path class="xs-load" d="M160 6v26"/><path class="xs-head" d="M153 28h14l-7 10z"/>
         <rect class="xs-wall" x="16" y="56" width="112" height="40"/>
         <rect class="xs-wall" x="192" y="56" width="112" height="40"/>
@@ -401,60 +424,62 @@ footer { padding-top: 24px; padding-bottom: 40px; border-top: 2px solid var(--li
         <path class="xs-crack" d="M122 94l-14-7-6 4-14-6"/>
         <text class="xs-text" x="160" y="126" text-anchor="middle">wall of the ball, seen edge on</text>
       </svg>
-      <figcaption>Hit it hard enough, enough times, and the split runs hole to hole. That is the ball that goes soft and oval on you in the middle of a good point.</figcaption>
+      <figcaption>If the claim holds, cracks start at the corner and run from hole to hole. Buyer reviews of the X-40 do mention cracking, alongside praise for how long it lasts.<a class="cite" href="#s5">[5]</a></figcaption>
     </figure>
     <figure class="good">
-      <h3>Chamfered hole: load spreads out</h3>
-      <p class="how">The bevel gives the force somewhere to go.</p>
-      <svg viewBox="0 0 320 150" role="img" aria-label="Cross-section of a ball wall with a chamfered hole. The hole edges are beveled, shown in green, with no sharp corners.">
+      <h3>Chamfered hole</h3>
+      <p class="how">Claim: the bevel spreads the load.</p>
+      <svg viewBox="0 0 320 150" role="img" aria-label="Schematic cross-section of a ball wall with a chamfered hole. The hole edges are beveled, shown in green, with no sharp corners.">
         <path class="xs-load" d="M160 6v26"/><path class="xs-head" d="M153 28h14l-7 10z"/>
         <path class="xs-wall" d="M16 56h96l16 14v12l-16 14H16z"/>
         <path class="xs-wall" d="M304 56h-96l-16 14v12l16 14h96z"/>
         <path class="xs-bevel" d="M112 56l16 14M112 96l16-14M208 56l-16 14M208 96l-16-14"/>
         <text class="xs-text" x="160" y="81" text-anchor="middle">hole</text>
-        <text class="xs-text" x="160" y="126" text-anchor="middle">no sharp corner for a crack to start from</text>
+        <text class="xs-text" x="160" y="126" text-anchor="middle">beveled edge, no sharp corner</text>
       </svg>
-      <figcaption>No sharp corner for a crack to start from. Life Time describes this design as patent-pending (2025) and built the whole ball around it. It is the single biggest reason the LT lasts longer in open play.</figcaption>
+      <figcaption>Life Time describes the design as patent-pending (2025).<a class="cite" href="#s3">[3]</a> Whether it cuts the crack rate in open play is the main thing the court test should answer.</figcaption>
     </figure>
   </div>
-  <p class="tagline">More holes. Softer edges. <span>Truer bounce. Longer life.</span></p>
-  <p class="print-only fine fine-2-flip"><strong>Flip this sheet over for the head-to-head and the two-game test.</strong></p>
+  <p class="print-only fine fine-2-flip"><strong>Other side: evidence by claim, measurements, and the court test.</strong></p>
 </section>
 
 <section id="h2h" class="sec" aria-labelledby="h2h-h">
-  <span class="kicker">Head to head</span>
-  <h2 id="h2h-h" class="sr-only">Head to head</h2>
+  <span class="kicker">Numbers</span>
+  <h2 id="h2h-h" class="sr-only">Measurements and specs</h2>
   <table class="h2h">
     <caption class="sr-only">Life Time LT Pro 48 compared with Franklin X-40</caption>
     <thead><tr><td></td><th scope="col" class="c-lt">Life Time LT Pro 48</th><th scope="col" class="c-fr">Franklin X-40</th></tr></thead>
     <tbody>
-      <tr><th scope="row">Holes</th><td class="c-lt" data-label="LT Pro 48">48, evenly spaced, chamfered edges</td><td class="c-fr" data-label="Franklin X-40">40, machine drilled</td></tr>
-      <tr><th scope="row">Build</th><td class="c-lt" data-label="LT Pro 48">Two-piece injection molded, 26 g</td><td class="c-fr" data-label="Franklin X-40">One-piece rotationally molded</td></tr>
-      <tr><th scope="row">Feel</th><td class="c-lt" data-label="LT Pro 48">Fast, firm, high bounce</td><td class="c-fr" data-label="Franklin X-40">Softer and slower</td></tr>
-      <tr><th scope="row">Pro tours</th><td class="c-lt" data-label="LT Pro 48">Official ball of PPA Tour + MLP</td><td class="c-fr" data-label="Franklin X-40">USA Pickleball and US Open ball</td></tr>
-      <tr><th scope="row">Designed to fix</th><td class="c-lt" data-label="LT Pro 48">Cracking, bad bounces, and heat</td><td class="c-fr" data-label="Franklin X-40">The long-time rec-play standard</td></tr>
+      <tr><th scope="row">Drive speed, used ball <a class="cite" href="#s6">[6]</a></th><td class="c-lt" data-label="LT Pro 48">59.7 mph</td><td class="c-fr" data-label="Franklin X-40">57.7 mph</td></tr>
+      <tr><th scope="row">Pop, new / used <a class="cite" href="#s6">[6]</a></th><td class="c-lt" data-label="LT Pro 48">39.2 / 39.0 mph</td><td class="c-fr" data-label="Franklin X-40">37.8 / 37.1 mph</td></tr>
+      <tr><th scope="row">Bounce, new / used <a class="cite" href="#s6">[6]</a></th><td class="c-lt" data-label="LT Pro 48">22.8 / 22.4 in</td><td class="c-fr" data-label="Franklin X-40">21.1 / 20.9 in</td></tr>
+      <tr><th scope="row">Games per ball <a class="cite" href="#s8">[8]</a></th><td class="c-lt" data-label="LT Pro 48">20 to 25 (one reviewer)</td><td class="c-fr" data-label="Franklin X-40">20 to 30 (one reviewer)</td></tr>
+      <tr class="web-only"><th scope="row">Build <a class="cite" href="#s4">[4]</a><a class="cite" href="#s5">[5]</a></th><td class="c-lt" data-label="LT Pro 48">48 holes, chamfered. Two-piece, injection molded</td><td class="c-fr" data-label="Franklin X-40">40 holes, drilled. One-piece, rotationally molded</td></tr>
+      <tr><th scope="row">USA Pickleball approved <a class="cite" href="#s11">[11]</a></th><td class="c-lt" data-label="LT Pro 48">Not on the list. Rules cap holes at 40</td><td class="c-fr" data-label="Franklin X-40">Yes</td></tr>
+      <tr><th scope="row">Price per ball <a class="cite" href="#s8">[8]</a></th><td class="c-lt" data-label="LT Pro 48">$2.50 to $4.33</td><td class="c-fr" data-label="Franklin X-40">$2.00 to $4.33</td></tr>
     </tbody>
   </table>
 </section>
 
 <section id="fair" class="sec" aria-labelledby="fair-h">
-  <span class="kicker">Fair questions</span>
-  <h2 id="fair-h" class="sr-only">Fair questions</h2>
+  <span class="kicker">The case against switching</span>
+  <h2 id="fair-h" class="sr-only">The case against switching</h2>
   <div class="fair">
-    <div><h3>"The X-40 is the official USAP ball."</h3><p>True. USA Pickleball sanctions with it. But the two biggest pro tours looked at the whole field and picked the LT.</p></div>
-    <div><h3>"It plays too fast for me."</h3><p>It is quicker off the paddle. Give it two sessions. Your resets and hands speed get sharper, not worse.</p></div>
-    <div><h3>"It costs more per ball."</h3><p>A cracked ball costs the whole group a game. Cost per hour of good play is what actually matters.</p></div>
+    <div><h3>Not USA Pickleball approved.</h3><p>The X-40 is on the approved list; the LT is not, and the 2025 rules allow 26 to 40 holes.<a class="cite" href="#s11">[11]</a><a class="cite" href="#s12">[12]</a> If you play USAP-sanctioned events, you will compete with a different ball.</p></div>
+    <div><h3>Faster is not better for everyone.</h3><p>Pro Zane Navratil called it "ever so slightly too fast," reported less spin, and noted some arm soreness.<a class="cite" href="#s9">[9]</a> Another reviewer rates visibility as its main weakness.<a class="cite" href="#s6">[6]</a></p></div>
+    <div><h3>The durability edge is unproven.</h3><p>The LT costs the same or more per ball.<a class="cite" href="#s8">[8]</a> It only saves money if it lasts longer, and the only game counts published do not show that.</p></div>
   </div>
 </section>
 
 <section id="test" class="test" aria-labelledby="test-h">
-  <h2 id="test-h">The two-game test</h2>
-  <p class="lead">Try it before you argue: play one game with each, back to back. Same players, same wind, ten minutes apart.</p>
-  <div class="print-only print-qr">{{QR}}<span>Full page, sources,<br>and the vote:<br>balls.93.fyi</span></div>
+  <h2 id="test-h">The court test</h2>
+  <p class="lead">Feel is subjective and durability on our courts is unmeasured. Compare both balls under the same conditions and record the result.</p>
+  <div class="print-only print-qr">{{QR}}<span>Sources, numbers,<br>and the vote:<br>balls.93.fyi</span></div>
   <ol class="steps">
-    <li>Game one with the LT Pro 48.</li>
-    <li>Game two with the Franklin X-40.</li>
-    <li>Pass this phone around. Each player taps once.</li>
+    <li>Flip a coin for which ball goes first. Use new balls of each.</li>
+    <li>Play one game with each, back to back, same four players.</li>
+    <li>Vote before discussing it. Pass this phone; each player taps once.</li>
+    <li>For durability, write the first-use date on each ball and note the date it cracks or goes out of round.</li>
   </ol>
   <p class="vote-q" id="vote-q">Which ball did you prefer?</p>
   <div class="vote" role="group" aria-labelledby="vote-q">
@@ -467,7 +492,7 @@ footer { padding-top: 24px; padding-bottom: 40px; border-top: 2px solid var(--li
     <div class="bar lt"><span>LT Pro 48</span><span class="track"><span class="fill" data-fill="lt"></span></span><span class="n" data-n="lt">0</span></div>
     <div class="bar fr"><span>Franklin X-40</span><span class="track"><span class="fill" data-fill="fr"></span></span><span class="n" data-n="fr">0</span></div>
     <div class="bar same"><span>No difference</span><span class="track"><span class="fill" data-fill="same"></span></span><span class="n" data-n="same">0</span></div>
-    <p class="note">Votes are saved on this phone only. Nothing is sent anywhere, so this is a tally for one group passing one phone, not a court-wide poll.</p>
+    <p class="note">Votes are saved on this phone only. Nothing is sent anywhere, so this is a tally for one group passing one phone, not a court-wide poll. Players can see which ball is which, so the vote is not blind.</p>
     <div class="tally-actions">
       <button class="btn ghost" type="button" id="undo">Undo last vote</button>
       <button class="btn ghost" type="button" id="reset">Clear this phone's tally</button>
@@ -475,22 +500,22 @@ footer { padding-top: 24px; padding-bottom: 40px; border-top: 2px solid var(--li
   </div>
 </section>
 
-<p class="print-only fine fine-1">Specs and durability claims per Life Time and Pickleball Central product information; PPA Tour and MLP ball announcements, 2025 and 2026. Franklin X-40 specs per Pickleball Central product information. Ball feel is subjective, so run the test above.</p>
-<p class="print-only fine fine-2">Ball illustrations are schematic, drawn to show hole count and edge geometry, not exact factory hole placement. About twenty holes of each ball are visible from any one side. Construction and patent details per Life Time and Pickleball Central product information; Franklin X-40 specs per Pickleball Central.</p>
+<p class="print-only fine fine-1">Bracketed numbers refer to the source list at balls.93.fyi. Speed and bounce: Pickleball Effect, Oct 2026. Game counts and prices: Pickleheads, Oct 2026. Specs: Pickleball Central product pages. Approval: USA Pickleball approved ball list and 2025 rule 2.D.1, checked Nov 2026. No lab tests were run for this handout.</p>
+<p class="print-only fine fine-2">Ball illustrations are schematic, drawn to show hole count and edge geometry, not exact factory hole placement. About twenty holes of each ball are visible from any one side. The cross-sections illustrate Life Time's stated mechanism and are not test results.</p>
 
 <section id="watch" class="sec noprint" aria-labelledby="watch-h">
-  <span class="kicker">Watch before you play</span>
-  <h2 id="watch-h">See the balls in action.</h2>
+  <span class="kicker">Video</span>
+  <h2 id="watch-h">Independent reviews on video.</h2>
   <ul class="links">
-    <li><a href="https://www.youtube.com/watch?v=IDTvFvIeWAY" rel="noopener">Life Time Pickleball Ball Review <small>Zane Navratil, pro player, on YouTube</small></a></li>
-    <li><a href="https://www.youtube.com/watch?v=vAT3NywfwTU" rel="noopener">Most Popular Pickleball Balls Ranked: Data-Driven Test <small>Pickleball Effect on YouTube. Tests the LT Pro 48 and the Franklin X-40 side by side.</small></a></li>
+    <li><a href="https://www.youtube.com/watch?v=IDTvFvIeWAY" rel="noopener">Life Time Pickleball Ball Review <small>Zane Navratil, pro player. He states no financial tie to Life Time.</small></a></li>
+    <li><a href="https://www.youtube.com/watch?v=vAT3NywfwTU" rel="noopener">Most Popular Pickleball Balls Ranked: Data-Driven Test <small>Pickleball Effect. Tests the LT Pro 48 and the Franklin X-40 side by side.</small></a></li>
   </ul>
 </section>
 
 <section id="buy" class="sec noprint" aria-labelledby="buy-h">
-  <span class="kicker">Where to get them</span>
-  <h2 id="buy-h">Grab a pack of LT Pro 48s.</h2>
-  <p>Prices change often, so check the store for today's price.</p>
+  <span class="kicker">For the trial</span>
+  <h2 id="buy-h">Where to buy the LT Pro 48.</h2>
+  <p>A 3-pack was listed from $12.99 in October 2026.<a class="cite" href="#s6">[6]</a> Prices change, so check the store. This page earns nothing from the link.</p>
   <ul class="links">
     <li><a href="https://pickleballcentral.com/life-time-lt-pro-48-pickleball/" rel="noopener">LT Pro 48 at Pickleball Central <small>pickleballcentral.com</small></a></li>
   </ul>
@@ -498,22 +523,25 @@ footer { padding-top: 24px; padding-bottom: 40px; border-top: 2px solid var(--li
 
 <section id="sources" class="sec noprint" aria-labelledby="sources-h">
   <h2 id="sources-h">Sources</h2>
-  <details>
-    <summary>Show sources and how claims were checked</summary>
-    <p class="src-note">Durability and crack-resistance claims come from the manufacturer (Life Time) and a retailer (Pickleball Central). Nobody here ran lab tests. Ball feel is subjective, which is why the two-game test exists.</p>
-    <ol class="src">
-      <li><a href="https://pickleball.com/news/lt-pro-48-pickleball-named-official-ball-of-carvana-ppa-tour" rel="noopener">LT Pro 48 Pickleball Named Official Ball of Carvana PPA Tour</a>, pickleball.com, August 2025. PPA Tour announcement: symmetrically spaced holes, chamfered edges to reduce cracking and improve flight.</li>
-      <li><a href="https://news.lifetime.life/2026-04-29-Life-Times-LT-Pro-48-Pickleball-Named-Official-Ball-of-Major-League-Pickleball-2026-Season-Kicks-off-in-Dallas-May-22" rel="noopener">LT Pro 48 Named Official Ball of Major League Pickleball</a>, Life Time press release, April 29, 2026.</li>
-      <li><a href="https://experiencelife.lifetime.life/article/reinvention-in-action/" rel="noopener">Reinvention in Action</a>, Life Time's Experience Life, August 29, 2025. Life Time's own account of designing the ball: 48 equal holes, chamfered edges, patent-pending.</li>
-      <li><a href="https://pickleballcentral.com/life-time-lt-pro-48-pickleball/" rel="noopener">Life Time LT Pro 48 product page</a>, Pickleball Central. 48 holes, 26 g, two-piece injection molded, 2.9 inches, bounces 33.5 inches (about 85 cm) when dropped from 78 inches onto concrete.</li>
-      <li><a href="https://pickleballcentral.com/x-performance-40-outdoor-ball/" rel="noopener">Franklin X-40 product page</a>, Pickleball Central. 40 drilled holes, one-piece rotationally molded, official ball of USA Pickleball and the US Open.</li>
-    </ol>
-    <p class="src-note">Franklin Sports' own product page blocked automated checks when this page was built, so it is not linked here.</p>
-  </details>
+  <p class="src-note">All sources were read in November 2026. Nobody here ran lab tests. Sources 1 to 3 come from Life Time or its tour partners. Sources 4 and 5 are a retailer that sells both balls. Sources 6 to 8 are independent reviewers who earn affiliate commission on ball sales. No controlled durability or temperature test of these two balls has been published.</p>
+  <ol class="src">
+    <li id="s1"><a href="https://ppatour.com/lt-pro-48-pickleball-named-official-ball-of-carvana-ppa-tour/" rel="noopener">LT Pro 48 Pickleball Named Official Ball of Carvana PPA Tour</a>, PPA Tour, August 1, 2025. Exclusive PPA ball from August 2025. States that Life Time hosts PPA events; the PPA sponsor list names Life Time an Official Platinum Partner.</li>
+    <li id="s2"><a href="https://ir.lifetime.life/news-events/press-releases/detail/1201" rel="noopener">LT Pro 48 Named Official Ball of Major League Pickleball</a>, Life Time press release, April 29, 2026. Describes Life Time as a host venue partner for MLP events.</li>
+    <li id="s3"><a href="https://experiencelife.lifetime.life/article/reinvention-in-action/" rel="noopener">Reinvention in Action</a>, by Life Time's CEO, Experience Life, August 29, 2025. Design account: 48 equal holes, chamfered edges, patent-pending. Contains no test data.</li>
+    <li id="s4"><a href="https://pickleballcentral.com/life-time-lt-pro-48-pickleball/" rel="noopener">Life Time LT Pro 48 product page</a>, Pickleball Central. 48 holes, 26 g, 2.9 in, two-piece injection molded, bounces 33.5 in when dropped from 78 in onto concrete. No customer reviews yet.</li>
+    <li id="s5"><a href="https://pickleballcentral.com/x-performance-40-outdoor-ball/" rel="noopener">Franklin X-40 product page</a>, Pickleball Central. 40 drilled holes, one-piece rotationally molded, 2.91 in, listed as both 0.88 oz and 26 g, USAP approved. 948 customer reviews; some mention cracking, others long life.</li>
+    <li id="s6"><a href="https://pickleballeffect.com/equipment-reviews/franklin-x-44-vs-lifetime-lt-pro-48-vs-selkirk-s2-pro/" rel="noopener">Franklin X-44 vs Life Time LT Pro 48 vs Selkirk S2 Pro</a>, Pickleball Effect, October 28, 2026. Source of the speed, pop, and bounce numbers; the X-40 is the reference ball. One tester; sample size and conditions not stated.</li>
+    <li id="s7"><a href="https://pickleballeffect.com/equipment-reviews/best-pickleball-balls-tested-ranked/" rel="noopener">Best Pickleball Balls, Tested and Ranked</a>, Pickleball Effect, April 20, 2026. Reviewer's experience of durability, shape, and heat. No measurements.</li>
+    <li id="s8"><a href="https://www.pickleheads.com/pickleball-gear/pickleball-balls" rel="noopener">Pickleball balls guide</a>, Pickleheads, updated October 5, 2026. Games per ball and price per ball from on-court use of at least five hours per product.</li>
+    <li id="s9"><a href="https://www.thedinkpickleball.com/whats-the-deal-with-the-new-life-time-pickleball-zane-navratil-weighs-in/" rel="noopener">What's the Deal with the New Life Time Pickleball?</a>, Zane Navratil, The Dink, May 21, 2025. Compares the LT with the Vulcan ball, not the X-40.</li>
+    <li id="s10"><a href="https://thedinkpickleball.com/comparing-life-time-and-franklin-pickleballs-in-slow-motion" rel="noopener">Comparing Life Time and Franklin Pickleballs in Slow Motion</a>, The Dink, February 11, 2026. John Kew's high-speed video. Visual observation, no numbers.</li>
+    <li id="s11"><a href="https://equipment.usapickleball.org/ball-list/" rel="noopener">Approved ball list</a>, USA Pickleball. Franklin X-40 models are listed. No Life Time ball was found where the brand would sort alphabetically; not every page of the list was checked.</li>
+    <li id="s12"><a href="https://playpickleball.com/2025-usa-pickleball-rules-section-2-court-and-equipment" rel="noopener">2025 USA Pickleball rules, section 2</a>, as reproduced by PlayPickleball. Rule 2.D.1: 26 to 40 circular holes. The 2026 rulebook was not checked.</li>
+  </ol>
 </section>
 </main>
 <footer>
-  <p>A players' proposal for our open-play courts, not affiliated with Life Time, Franklin Sports, the PPA Tour, or MLP. Ball illustrations are drawn by hand in code.</p>
+  <p>A players' proposal for our open-play courts. No sponsorship, no affiliate links, not affiliated with Life Time, Franklin Sports, the PPA Tour, or MLP. Ball illustrations are drawn by hand in code.</p>
 </footer>
 <script>
 (function () {
